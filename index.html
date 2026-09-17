@@ -4,22 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shruthi Durgaa C — B.Sc Artificial Intelligence & Machine Learning student, Python/Java/C++ developer, and a former co-founder of Innovate Graphicz.">
-    <meta name="theme-color" content="#0B0E14">
+    <meta name="description" content="Shruthi Durgaa C — B.Sc Artificial Intelligence & Machine Learning student, Python/Java/C++ developer, and former co-founder of Innovate Graphicz.">
+    <meta name="theme-color" content="#F5F6F8">
 
     <title>Shruthi Durgaa C — AI & ML Student &amp; Developer</title>
 
     <link rel="icon" href="data:,">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- Apply saved/system theme before paint to avoid a flash -->
+    <script>
+        (function () {
+            var saved = localStorage.getItem("theme");
+            var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            document.documentElement.setAttribute("data-theme", theme);
+        })();
+    </script>
 </head>
 
 <body>
 
     <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
     <!-- Navigation -->
     <nav aria-label="Primary">
@@ -29,11 +40,15 @@
             <span class="sr-only">Menu</span>
         </button>
         <div class="nav-links" id="navLinks">
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="#about" data-nav-link>About</a>
+            <a href="#education" data-nav-link>Education</a>
+            <a href="#skills" data-nav-link>Skills</a>
+            <a href="#projects" data-nav-link>Projects</a>
+            <a href="#contact" data-nav-link>Contact</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+                <span class="theme-icon theme-icon-light" aria-hidden="true">☀</span>
+                <span class="theme-icon theme-icon-dark" aria-hidden="true">☾</span>
+            </button>
         </div>
     </nav>
 
@@ -43,7 +58,7 @@
         <h1>Shruthi Durgaa C</h1>
         <p class="lede">
             I build with Python, Java, and C++ while studying AI and machine learning —
-            and lead digital branding work as a former co-founder of a student-run startup.
+            and previously led digital branding work as co-founder of a student-run startup.
         </p>
         <div class="hero-actions">
             <a href="#projects" class="button button-primary">View my projects</a>
@@ -60,8 +75,8 @@
                 <dd>Py · Java · C++</dd>
             </div>
             <div>
-                <dt>Since</dt>
-                <dd>Aug 2025</dd>
+                <dt>Certifications</dt>
+                <dd>2</dd>
             </div>
         </dl>
     </header>
@@ -69,21 +84,21 @@
     <main id="main">
 
         <!-- About -->
-        <section id="about" aria-labelledby="about-heading">
+        <section id="about" aria-labelledby="about-heading" data-reveal>
             <div class="section-inner">
                 <h2 id="about-heading">About</h2>
                 <p>
-                    I'm a Artifical Intelligence And Machine Learning  student pursuing a B.Sc in Artificial Intelligence and
+                    I'm a Computer Science student pursuing a B.Sc in Artificial Intelligence and
                     Machine Learning at KPR College of Arts, Science and Research. My coursework
                     covers regression and classification models, artificial neural networks, and
-                    Python-based data analysis.
+                    Python-based data analysis with pandas, NumPy, and scikit-learn.
                 </p>
                 <p>
-                    Outside the classroom, I co-founded <strong>Innovate Graphicz</strong>, a
-                    student-led digital branding and web solutions studio, where I worked as COO
-                    leading marketing initiatives and client-facing design work for startups and
-                    NGOs. I'm HubSpot-certified in digital marketing and hold IBM SkillsBuild
-                    badges alongside my technical coursework.
+                    Outside the classroom, I was a co-founder and COO of
+                    <strong>Innovate Graphicz</strong>, a student-led digital branding and web
+                    solutions studio, where I led marketing initiatives and client-facing design
+                    work for startups and NGOs. I'm HubSpot-certified in digital marketing and
+                    hold IBM SkillsBuild badges alongside my technical coursework.
                 </p>
                 <p>
                     I like projects that sit between the two: writing code that solves a real
@@ -94,7 +109,7 @@
         </section>
 
         <!-- Education -->
-        <section id="education" aria-labelledby="education-heading">
+        <section id="education" aria-labelledby="education-heading" data-reveal>
             <div class="section-inner">
                 <h2 id="education-heading">Education</h2>
                 <ol class="timeline">
@@ -102,7 +117,7 @@
                         <span class="timeline-date">2025 — 2028</span>
                         <h3>B.Sc Artificial Intelligence &amp; Machine Learning</h3>
                         <p>KPR College of Arts, Science and Research</p>
-                        <p class="muted">Active in the KPR Incubation Hub, hackathons, and NPTEL coursework.</p>
+                        <p class="muted">Ongoing NPTEL coursework and hackathons; previously part of the KPR Incubation Hub.</p>
                     </li>
                     <li>
                         <span class="timeline-date">2023 — 2025</span>
@@ -114,7 +129,7 @@
         </section>
 
         <!-- Skills -->
-        <section id="skills" aria-labelledby="skills-heading">
+        <section id="skills" aria-labelledby="skills-heading" data-reveal>
             <div class="section-inner">
                 <h2 id="skills-heading">Skills</h2>
 
@@ -152,7 +167,7 @@
         </section>
 
         <!-- Projects -->
-        <section id="projects" aria-labelledby="projects-heading">
+        <section id="projects" aria-labelledby="projects-heading" data-reveal>
             <div class="section-inner">
                 <h2 id="projects-heading">Projects</h2>
 
@@ -179,7 +194,7 @@
         </section>
 
         <!-- Contact -->
-        <section id="contact" aria-labelledby="contact-heading">
+        <section id="contact" aria-labelledby="contact-heading" data-reveal>
             <div class="section-inner">
                 <h2 id="contact-heading">Contact</h2>
                 <p class="muted">Happy to talk about AI/ML projects, internships, or branding work.</p>
@@ -195,7 +210,7 @@
                     </li>
                     <li>
                         <span>LinkedIn</span>
-                        <a href="https://www.linkedin.com/in/shruthi-durgaa-c" target="_blank" rel="noopener">shruthi-durgaa</a>
+                        <a href="https://www.linkedin.com/in/shruthi-durgaa-5272ab380" target="_blank" rel="noopener">shruthi-durgaa</a>
                     </li>
                     <li>
                         <span>GitHub</span>
