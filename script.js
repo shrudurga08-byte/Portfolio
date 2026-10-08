@@ -1,3 +1,4 @@
+
 // =========================
 // Theme toggle (light/dark)
 // =========================
@@ -6,7 +7,7 @@ const rootEl = document.documentElement;
  
 function setTheme(theme) {
     rootEl.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
+    try { localStorage.setItem("theme", theme); } catch (e) {}
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) {
         meta.setAttribute("content", theme === "dark" ? "#0B0E14" : "#F5F6F8");
@@ -59,32 +60,22 @@ function showToast(message) {
 }
  
 // =========================
-// Copy contact details to clipboard
+// Copy buttons (email / phone still open normally when clicked)
 // =========================
 function copyToClipboard(text, label) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard
             .writeText(text)
             .then(() => showToast(`${label} copied to clipboard`))
-            .catch(() => showToast(`Could not copy ${label.toLowerCase()}`));
+            .catch(() => showToast(`${label}: ${text}`));
     } else {
         showToast(`${label}: ${text}`);
     }
 }
  
-document.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
-    link.addEventListener("click", (event) => {
-        event.preventDefault();
-        const email = link.getAttribute("href").replace("mailto:", "");
-        copyToClipboard(email, "Email");
-    });
-});
- 
-document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
-    link.addEventListener("click", (event) => {
-        event.preventDefault();
-        const phone = link.textContent.trim();
-        copyToClipboard(phone, "Phone number");
+document.querySelectorAll("[data-copy]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+        copyToClipboard(btn.dataset.copy, btn.dataset.label || "Text");
     });
 });
  
@@ -165,3 +156,23 @@ if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
 }
  
+ 
+// =========================
+// Count-up for hero stats
+// =========================
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+document.querySelectorAll("[data-count]").forEach((el) => {
+    const target = Number(el.dataset.count);
+    const suffix = el.dataset.suffix || "";
+    if (reduceMotion || !target) return;
+    const start = performance.now();
+    const duration = 1100;
+    function tick(now) {
+        const t = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = Math.round(target * eased) + (t === 1 ? suffix : "");
+        if (t < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+});
+

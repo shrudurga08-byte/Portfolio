@@ -4,12 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shruthi Durgaa C — B.Sc Artificial Intelligence & Machine Learning student, Python/Java/C++ developer, and former co-founder of Innovate Graphicz.">
+    <meta name="description" content="Shruthi Durgaa C — B.Sc AI & Machine Learning student, Python & Java developer, 75+ LeetCode problems solved, former co-founder & COO of Innovate Graphicz. Seeking software development and AI/ML internships.">
     <meta name="theme-color" content="#F5F6F8">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Shruthi Durgaa C — AI & ML Student & Developer">
+    <meta property="og:description" content="Python & Java developer studying AI/ML. 75+ LeetCode problems, Java OOP projects, and a student startup co-founder. Open to internships.">
+    <meta property="og:url" content="https://shrudurga08-byte.github.io/Portfolio/">
+    <meta name="twitter:card" content="summary">
 
     <title>Shruthi Durgaa C — AI & ML Student &amp; Developer</title>
 
-    <link rel="icon" href="data:,">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%233452FF'/%3E%3Ctext x='32' y='41' font-family='Arial' font-weight='700' font-size='26' text-anchor='middle' fill='white'%3ESD%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -19,8 +25,9 @@
     <!-- Apply saved/system theme before paint to avoid a flash -->
     <script>
         (function () {
-            var saved = localStorage.getItem("theme");
-            var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            var theme;
+            try { theme = localStorage.getItem("theme"); } catch (e) {}
+            if (!theme) theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
             document.documentElement.setAttribute("data-theme", theme);
         })();
     </script>
@@ -34,16 +41,18 @@
 
     <!-- Navigation -->
     <nav aria-label="Primary">
-        <a href="#top" class="nav-mark">SD</a>
+        <a href="#top" class="nav-mark" aria-label="Back to top">SD</a>
         <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">
             <span></span><span></span><span></span>
             <span class="sr-only">Menu</span>
         </button>
         <div class="nav-links" id="navLinks">
             <a href="#about" data-nav-link>About</a>
-            <a href="#education" data-nav-link>Education</a>
-            <a href="#skills" data-nav-link>Skills</a>
+            <a href="#experience" data-nav-link>Experience</a>
             <a href="#projects" data-nav-link>Projects</a>
+            <a href="#skills" data-nav-link>Skills</a>
+            <a href="#education" data-nav-link>Education</a>
+            <a href="#achievements" data-nav-link>Certifications</a>
             <a href="#contact" data-nav-link>Contact</a>
             <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
                 <span class="theme-icon theme-icon-light" aria-hidden="true">☀</span>
@@ -54,11 +63,13 @@
 
     <!-- Hero -->
     <header id="top">
+        <p class="status-chip"><span class="status-dot" aria-hidden="true"></span>Open to internships — software development &amp; AI/ML</p>
         <p class="kicker">B.Sc Artificial Intelligence &amp; Machine Learning</p>
         <h1>Shruthi Durgaa C</h1>
         <p class="lede">
-            I build with Python, Java, and C++ while studying AI and machine learning —
-            and previously led digital branding work as co-founder of a student-run startup.
+            I build with Python and Java, solve problems with data structures and algorithms,
+            and study neural networks and machine learning — with a co-founder's eye for
+            clear communication.
         </p>
         <div class="hero-actions">
             <a href="#projects" class="button button-primary">View my projects</a>
@@ -67,16 +78,20 @@
 
         <dl class="stat-strip">
             <div>
-                <dt>Problems solved</dt>
-                <dd>65+</dd>
+                <dt>LeetCode problems</dt>
+                <dd data-count="75" data-suffix="+">75+</dd>
+            </div>
+            <div>
+                <dt>DP problems</dt>
+                <dd data-count="14" data-suffix="+">14+</dd>
             </div>
             <div>
                 <dt>Languages</dt>
                 <dd>Py · Java · C++</dd>
             </div>
             <div>
-                <dt>Certifications</dt>
-                <dd>2</dd>
+                <dt>Startup role</dt>
+                <dd>Co-Founder &amp; COO</dd>
             </div>
         </dl>
     </header>
@@ -88,81 +103,42 @@
             <div class="section-inner">
                 <h2 id="about-heading">About</h2>
                 <p>
-                    I'm a Computer Science student pursuing a B.Sc in Artificial Intelligence and
-                    Machine Learning at KPR College of Arts, Science and Research. My coursework
-                    covers regression and classification models, artificial neural networks, and
-                    Python-based data analysis with pandas, NumPy, and scikit-learn.
+                    I'm a B.Sc Artificial Intelligence &amp; Machine Learning student at
+                    KPR College of Arts, Science and Research, with a strong foundation in
+                    Python, Java and data structures &amp; algorithms. I'm hands-on with pandas,
+                    NumPy and scikit-learn, and my coursework covers neural networks.
                 </p>
                 <p>
-                    Outside the classroom, I was a co-founder and COO of
-                    <strong>Innovate Graphicz</strong>, a student-led digital branding and web
-                    solutions studio, where I led marketing initiatives and client-facing design
-                    work for startups and NGOs. I'm HubSpot-certified in digital marketing and
-                    hold IBM SkillsBuild badges alongside my technical coursework.
+                    I co-founded <strong>Innovate Graphicz</strong>, a student-led digital
+                    branding and web studio, where I handled operations, client delivery and
+                    team coordination — adding communication and leadership to my technical
+                    skill set.
                 </p>
                 <p>
-                    I like projects that sit between the two: writing code that solves a real
-                    problem, then presenting it in a way people outside the code actually
-                    understand.
+                    I'm looking for internships in software development and AI/ML where I can
+                    write code that solves a real problem and present it so people outside the
+                    code understand it too.
                 </p>
             </div>
         </section>
 
-        <!-- Education -->
-        <section id="education" aria-labelledby="education-heading" data-reveal>
+        <!-- Experience -->
+        <section id="experience" aria-labelledby="experience-heading" data-reveal>
             <div class="section-inner">
-                <h2 id="education-heading">Education</h2>
+                <h2 id="experience-heading">Experience</h2>
                 <ol class="timeline">
                     <li>
-                        <span class="timeline-date">2025 — 2028</span>
-                        <h3>B.Sc Artificial Intelligence &amp; Machine Learning</h3>
-                        <p>KPR College of Arts, Science and Research</p>
-                        <p class="muted">Ongoing NPTEL coursework and hackathons; previously part of the KPR Incubation Hub.</p>
-                    </li>
-                    <li>
-                        <span class="timeline-date">2023 — 2025</span>
-                        <h3>Higher Secondary Education</h3>
-                        <p>St. Joseph Hr. Sec. School, State Board</p>
+                        <span class="timeline-date">Dec 2025 — Mar 2026</span>
+                        <h3>Co-Founder &amp; Chief Operating Officer</h3>
+                        <p class="org">Innovate Graphicz · Coimbatore</p>
+                        <ul class="bullets">
+                            <li>Co-founded a student-led digital branding and web solutions startup, overseeing operations, client delivery and team coordination.</li>
+                            <li>Led digital marketing initiatives that strengthened the online presence and brand identity of startup and NGO clients.</li>
+                            <li>Coordinated design and marketing team members to deliver client-focused digital solutions on schedule.</li>
+                            <li>Presented branding proposals and design concepts to clients and stakeholders, turning requirements into clear creative direction.</li>
+                        </ul>
                     </li>
                 </ol>
-            </div>
-        </section>
-
-        <!-- Skills -->
-        <section id="skills" aria-labelledby="skills-heading" data-reveal>
-            <div class="section-inner">
-                <h2 id="skills-heading">Skills</h2>
-
-                <div class="skill-group">
-                    <h3>Languages</h3>
-                    <ul class="skill-list">
-                        <li>Python</li>
-                        <li>Java</li>
-                        <li>C++</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                    </ul>
-                </div>
-
-                <div class="skill-group">
-                    <h3>Data &amp; Machine Learning</h3>
-                    <ul class="skill-list">
-                        <li>pandas</li>
-                        <li>NumPy</li>
-                        <li>scikit-learn</li>
-                        <li>Neural Networks</li>
-                    </ul>
-                </div>
-
-                <div class="skill-group">
-                    <h3>Marketing &amp; Design</h3>
-                    <ul class="skill-list">
-                        <li>Digital Branding</li>
-                        <li>Client Presentations</li>
-                        <li>Visual Design</li>
-                    </ul>
-                </div>
             </div>
         </section>
 
@@ -172,24 +148,165 @@
                 <h2 id="projects-heading">Projects</h2>
 
                 <div class="project-grid">
-                    <article class="project-card">
-                        <h3>Splitwise</h3>
-                        <p>A Java application for splitting and tracking shared group expenses.</p>
-                        <a href="https://github.com/shrudurga08-byte/Splitwise" target="_blank" rel="noopener">View on GitHub</a>
+                    <article class="project-card project-featured">
+                        <p class="project-meta">Java · OOP</p>
+                        <h3>Splitwise Expense-Sharing App</h3>
+                        <p>A Java application to split and track shared expenses among groups of users.</p>
+                        <ul class="bullets">
+                            <li>Separate <code>User</code>, <code>Group</code>, <code>Expense</code> and <code>Share</code> classes keep the logic modular.</li>
+                            <li>Applies inheritance (<code>Share</code> extends <code>Expense</code>).</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/shrudurga08-byte/Splitwise" target="_blank" rel="noopener">Splitwise ↗</a>
+                            <a href="https://github.com/shrudurga08-byte/SplitwiseApp" target="_blank" rel="noopener">SplitwiseApp ↗</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card project-featured">
+                        <p class="project-meta">Python · Java · C++</p>
+                        <h3>LeetCode — 75 Days Challenge</h3>
+                        <p>75+ problems solved across arrays, strings, two pointers, hash tables, trees, DFS, backtracking and dynamic programming.</p>
+                        <ul class="bullets">
+                            <li>14+ dynamic programming problems.</li>
+                            <li>Earned the LeetCode 75 and 50 Days 2026 badges.</li>
+                            <li>Daily solutions published to a public repository.</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/shrudurga08-byte/75DaysLeetCodeChallenge" target="_blank" rel="noopener">75DaysLeetCodeChallenge ↗</a>
+                        </div>
                     </article>
 
                     <article class="project-card">
-                        <h3>75 Days LeetCode Challenge</h3>
-                        <p>65+ algorithmic problems solved in Python and Java — arrays, strings, dynamic programming, and trees.</p>
-                        <a href="https://github.com/shrudurga08-byte/75DaysLeetCodeChallenge" target="_blank" rel="noopener">View on GitHub</a>
+                        <p class="project-meta">HTML · CSS · JavaScript</p>
+                        <h3>Portfolio Website</h3>
+                        <p>This site — built from scratch to showcase projects and skills, with a light/dark theme and responsive layout.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/shrudurga08-byte/Portfolio" target="_blank" rel="noopener">Portfolio ↗</a>
+                        </div>
                     </article>
 
                     <article class="project-card">
-                        <h3>This Portfolio</h3>
-                        <p>A personal site built from scratch with HTML, CSS, and JavaScript to bring my work together in one place.</p>
-                        <a href="https://github.com/shrudurga08-byte/Portfolio" target="_blank" rel="noopener">View on GitHub</a>
+                        <p class="project-meta">HTML · CSS · JavaScript</p>
+                        <h3>Login Page</h3>
+                        <p>A front-end login page interface built with clean, responsive markup and styling.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/shrudurga08-byte/LoginIn_Page" target="_blank" rel="noopener">LoginIn_Page ↗</a>
+                        </div>
                     </article>
                 </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" aria-labelledby="skills-heading" data-reveal>
+            <div class="section-inner">
+                <h2 id="skills-heading">Skills</h2>
+
+                <div class="skill-group">
+                    <h3>Programming Languages</h3>
+                    <ul class="skill-list">
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>C++</li>
+                        <li>HTML/CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Data Structures &amp; Algorithms</h3>
+                    <ul class="skill-list">
+                        <li>Arrays &amp; Strings</li>
+                        <li>Hash Tables</li>
+                        <li>Two Pointers</li>
+                        <li>Trees</li>
+                        <li>DFS</li>
+                        <li>Backtracking</li>
+                        <li>Dynamic Programming</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Data Science &amp; Machine Learning</h3>
+                    <ul class="skill-list">
+                        <li>pandas</li>
+                        <li>NumPy</li>
+                        <li>Neural Networks</li>
+                        <li>Backpropagation</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Software Engineering</h3>
+                    <ul class="skill-list">
+                        <li>Object-Oriented Programming</li>
+                        <li>Git &amp; GitHub</li>
+                        <li>VS Code</li>
+                        <li>Jupyter</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Design, Marketing &amp; Soft Skills</h3>
+                    <ul class="skill-list">
+                        <li>Digital Branding</li>
+                        <li>Presentation Design</li>
+                        <li>Digital Marketing</li>
+                        <li>Client Communication</li>
+                        <li>Leadership</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" aria-labelledby="education-heading" data-reveal>
+            <div class="section-inner">
+                <h2 id="education-heading">Education</h2>
+                <ol class="timeline">
+                    <li>
+                        <span class="timeline-date">Jul 2025 — May 2028</span>
+                        <h3>B.Sc Artificial Intelligence &amp; Machine Learning</h3>
+                        <p class="org">KPR College of Arts, Science and Research</p>
+                        <ul class="bullets">
+                            <li>Coursework: machine learning, data science, artificial neural networks; enrolled in NPTEL online certification coursework.</li>
+                            <li>Active in KPR Incubation Hub programs, hackathons and startup initiatives.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="timeline-date">Jun 2023 — 2025</span>
+                        <h3>Higher Secondary Education</h3>
+                        <p class="org">St. Joseph Hr. Sec. School · State Board</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Certifications & Achievements -->
+        <section id="achievements" aria-labelledby="achievements-heading" data-reveal>
+            <div class="section-inner">
+                <h2 id="achievements-heading">Certifications &amp; Achievements</h2>
+
+                <div class="badge-grid">
+                    <article class="badge-card">
+                        <span class="badge-issuer">HubSpot Academy</span>
+                        <h3>Fundamentals of Digital Marketing</h3>
+                    </article>
+                    <article class="badge-card">
+                        <span class="badge-issuer">IBM SkillsBuild</span>
+                        <h3>4 Digital Badges</h3>
+                    </article>
+                    <article class="badge-card">
+                        <span class="badge-issuer">LeetCode</span>
+                        <h3>LeetCode 75 &amp; 50 Days Badge 2026</h3>
+                    </article>
+                    <article class="badge-card">
+                        <span class="badge-issuer">KPR Incubation Hub</span>
+                        <h3>Program Participant</h3>
+                    </article>
+                </div>
+
+                <p class="muted languages-line"><strong>Languages:</strong> Tamil (native) · English (professional working proficiency)</p>
             </div>
         </section>
 
@@ -197,28 +314,40 @@
         <section id="contact" aria-labelledby="contact-heading" data-reveal>
             <div class="section-inner">
                 <h2 id="contact-heading">Contact</h2>
-                <p class="muted">Happy to talk about AI/ML projects, internships, or branding work.</p>
+                <p class="muted">Open to software development and AI/ML internships, and happy to talk about projects or branding work. Coimbatore, Tamil Nadu, India.</p>
 
                 <ul class="contact-list">
                     <li>
                         <span>Email</span>
-                        <a href="mailto:shrudurga08@gmail.com">shrudurga08@gmail.com</a>
+                        <div class="contact-value">
+                            <a href="mailto:shrudurga08@gmail.com">shrudurga08@gmail.com</a>
+                            <button type="button" class="copy-btn" data-copy="shrudurga08@gmail.com" data-label="Email" aria-label="Copy email address">Copy</button>
+                        </div>
                     </li>
                     <li>
                         <span>Phone</span>
-                        <a href="tel:+919843361678">+91 98433 61678</a>
+                        <div class="contact-value">
+                            <a href="tel:+919843361678">+91 98433 61678</a>
+                            <button type="button" class="copy-btn" data-copy="+91 98433 61678" data-label="Phone number" aria-label="Copy phone number">Copy</button>
+                        </div>
                     </li>
                     <li>
                         <span>LinkedIn</span>
-                        <a href="https://www.linkedin.com/in/shruthi-durgaa-5272ab380" target="_blank" rel="noopener">shruthi-durgaa</a>
+                        <div class="contact-value">
+                            <a href="https://www.linkedin.com/in/shruthi-durgaa-5272ab380" target="_blank" rel="noopener">shruthi-durgaa</a>
+                        </div>
                     </li>
                     <li>
                         <span>GitHub</span>
-                        <a href="https://github.com/shrudurga08-byte" target="_blank" rel="noopener">shrudurga08-byte</a>
+                        <div class="contact-value">
+                            <a href="https://github.com/shrudurga08-byte" target="_blank" rel="noopener">shrudurga08-byte</a>
+                        </div>
                     </li>
                     <li>
                         <span>LeetCode</span>
-                        <a href="https://leetcode.com/u/shrudurga_158/" target="_blank" rel="noopener">shrudurga_158</a>
+                        <div class="contact-value">
+                            <a href="https://leetcode.com/u/shrudurga_158/" target="_blank" rel="noopener">shrudurga_158</a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -228,6 +357,7 @@
 
     <footer>
         <p>&copy; <span id="year"></span> Shruthi Durgaa C. All rights reserved.</p>
+        <p><a href="#top">Back to top ↑</a></p>
     </footer>
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
