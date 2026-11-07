@@ -1,368 +1,480 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shruthi Durgaa C — B.Sc AI & Machine Learning student, Python & Java developer, 75+ LeetCode problems solved, former co-founder & COO of Innovate Graphicz. Seeking software development and AI/ML internships.">
-    <meta name="theme-color" content="#F5F6F8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shruthi Durgaa C — AI & ML Student & Developer</title>
+<meta name="description" content="Shruthi Durgaa C — B.Sc AI & Machine Learning student, Python & Java developer, 75+ LeetCode problems solved, former co-founder & COO of Innovate Graphicz. Seeking software development and AI/ML internships.">
+<meta property="og:title" content="Shruthi Durgaa C — AI & ML Student & Developer">
+<meta property="og:description" content="Python & Java developer studying AI/ML. 75+ LeetCode problems, Java OOP projects, and former co-founder of a student startup. Open to internships.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shrudurga08-byte.github.io/Portfolio/">
+<meta name="theme-color" content="#F5F6F8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --bg-alt:#f5f7fb; --card:#ffffff; --text:#0f172a; --muted:#566178;
+  --line:#e4e8f0; --accent:#3b5bff; --accent2:#8b5cf6; --accent-soft:#eaeeff;
+  --shadow:0 1px 2px rgba(15,23,42,.04),0 8px 24px rgba(15,23,42,.06);
+  --shadow-lg:0 12px 40px rgba(59,91,255,.16);
+  --grad:linear-gradient(135deg,var(--accent),var(--accent2));
+}
+[data-theme="dark"]{
+  --bg:#0b0f17; --bg-alt:#101624; --card:#141b2b; --text:#e9edf6; --muted:#98a3b9;
+  --line:#222c40; --accent:#7c9bff; --accent2:#b18cff; --accent-soft:#1a2542;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
+  --shadow-lg:0 12px 40px rgba(124,155,255,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:Inter,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 32px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:#fff;padding:8px 14px;border-radius:6px;z-index:100}
+.skip:focus{left:8px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad);z-index:200}
 
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Shruthi Durgaa C — AI & ML Student & Developer">
-    <meta property="og:description" content="Python & Java developer studying AI/ML. 75+ LeetCode problems, Java OOP projects, and former co-founder of a student startup. Open to internships.">
-    <meta property="og:url" content="https://shrudurga08-byte.github.io/Portfolio/">
-    <meta name="twitter:card" content="summary">
+/* Header */
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-weight:700;display:flex;align-items:center;gap:12px}
+.logo b{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--grad);color:#fff;font-size:14px;letter-spacing:.5px}
+nav ul{display:flex;gap:2px;list-style:none;align-items:center}
+nav a.link{padding:8px 13px;border-radius:8px;font-size:14px;color:var(--muted);font-weight:500;transition:.15s}
+nav a.link:hover{color:var(--text);background:var(--bg-alt)}
+nav a.link.active{color:var(--accent);background:var(--accent-soft)}
+.icon-btn{border:1px solid var(--line);background:var(--card);color:var(--text);width:38px;height:38px;border-radius:10px;cursor:pointer;font-size:16px;margin-left:8px;transition:.15s}
+.icon-btn:hover{border-color:var(--accent);color:var(--accent)}
+.menu-btn{display:none}
 
-    <title>Shruthi Durgaa C — AI & ML Student &amp; Developer</title>
+/* Hero */
+.hero{position:relative;padding:104px 0 96px;overflow:hidden;background:var(--bg)}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(90px);opacity:.35;z-index:0}
+.hero::before{width:480px;height:480px;background:var(--accent);top:-180px;right:-120px}
+.hero::after{width:380px;height:380px;background:var(--accent2);bottom:-200px;left:-120px;opacity:.22}
+.hero .wrap{position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:64px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:7px 15px;border-radius:999px;border:1px solid color-mix(in srgb,var(--accent) 25%,transparent)}
+.badge i{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.eyebrow{margin-top:26px;color:var(--muted);font-weight:600;font-family:"JetBrains Mono",monospace;font-size:14px}
+h1{font-size:clamp(40px,6vw,72px);line-height:1.04;letter-spacing:-2px;margin:10px 0 22px;font-weight:800}
+h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--muted);font-size:18.5px;max-width:610px}
+.cta{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.btn{padding:13px 26px;border-radius:12px;font-weight:600;font-size:15px;border:1px solid transparent;transition:.2s;display:inline-flex;align-items:center;gap:8px}
+.btn.primary{background:var(--grad);color:#fff;box-shadow:var(--shadow-lg)}
+.btn.primary:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.btn.ghost{color:var(--text);background:var(--card);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.social{display:flex;gap:10px;margin-top:28px}
+.social a{font-size:13px;font-weight:600;color:var(--muted);border:1px solid var(--line);padding:7px 14px;border-radius:999px;transition:.15s;background:var(--card)}
+.social a:hover{color:var(--accent);border-color:var(--accent)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stat{background:color-mix(in srgb,var(--card) 88%,transparent);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow);transition:.25s}
+.stat:hover{transform:translateY(-4px);border-color:var(--accent)}
+.stat:nth-child(2){transform:translateY(18px)}
+.stat:nth-child(2):hover{transform:translateY(14px)}
+.stat:nth-child(4){transform:translateY(18px)}
+.stat:nth-child(4):hover{transform:translateY(14px)}
+.stat strong{display:block;font-size:30px;letter-spacing:-.8px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.2}
+.stat span{font-size:13px;color:var(--muted);font-weight:500}
 
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%233452FF'/%3E%3Ctext x='32' y='41' font-family='Arial' font-weight='700' font-size='26' text-anchor='middle' fill='white'%3ESD%3C/text%3E%3C/svg%3E">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+/* Sections */
+section{padding:96px 0}
+section.alt{background:var(--bg-alt)}
+.sec-head{margin-bottom:48px;display:flex;align-items:flex-end;gap:18px}
+.sec-head .num{font-family:"JetBrains Mono",monospace;font-size:14px;color:var(--accent);font-weight:500;padding-bottom:8px}
+.sec-head h2{font-size:clamp(28px,4vw,40px);letter-spacing:-1px;line-height:1.1}
+.sec-head::after{content:"";flex:1;height:1px;background:var(--line);margin-bottom:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:var(--shadow)}
 
-    <link rel="stylesheet" href="style.css">
+/* Reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
 
-    <!-- Apply saved/system theme before paint to avoid a flash -->
-    <script>
-        (function () {
-            var theme;
-            try { theme = localStorage.getItem("theme"); } catch (e) {}
-            if (!theme) theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-            document.documentElement.setAttribute("data-theme", theme);
-        })();
-    </script>
+/* About */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.about p{color:var(--muted);margin-bottom:18px;font-size:17px}
+.about strong{color:var(--text)}
+.about .quote{border-left:3px solid var(--accent);padding-left:22px;font-size:20px;color:var(--text);font-weight:500;line-height:1.5;margin-bottom:0}
+
+/* Timeline */
+.tl{position:relative;display:grid;gap:24px;padding-left:34px}
+.tl::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--accent),var(--accent2));opacity:.35;border-radius:2px}
+.tl-item{position:relative;display:grid;grid-template-columns:190px 1fr;gap:28px}
+.tl-item::before{content:"";position:absolute;left:-34px;top:34px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.alt .tl-item::before{background:var(--bg-alt)}
+.date{color:var(--accent);font-size:13px;font-weight:600;padding-top:5px;font-family:"JetBrains Mono",monospace}
+.tl-item h3{font-size:20px;letter-spacing:-.3px}
+.org{color:var(--muted);font-weight:500;font-size:14.5px;margin:3px 0 14px}
+ul.dots{list-style:none;display:grid;gap:10px}
+ul.dots li{position:relative;padding-left:22px;color:var(--muted);font-size:15px}
+ul.dots li::before{content:"";position:absolute;left:0;top:10px;width:7px;height:7px;border-radius:2px;background:var(--grad);transform:rotate(45deg)}
+code{background:var(--bg-alt);border:1px solid var(--line);padding:1px 7px;border-radius:6px;font-size:12.5px;font-family:"JetBrains Mono",monospace;color:var(--accent)}
+
+/* Projects */
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.proj{position:relative;display:flex;flex-direction:column;transition:.3s;overflow:hidden}
+.proj::before{content:"";position:absolute;left:0;top:0;right:0;height:4px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:.35s}
+.proj:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.proj:hover::before{transform:scaleX(1)}
+.proj .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.tag{font-size:11.5px;font-weight:700;color:var(--accent);letter-spacing:.8px;background:var(--accent-soft);padding:4px 11px;border-radius:999px}
+.pnum{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--muted);opacity:.6}
+.proj h3{font-size:21px;margin-bottom:10px;letter-spacing:-.4px}
+.proj p{color:var(--muted);font-size:15px;margin-bottom:16px}
+.proj ul{margin-bottom:22px}
+.links{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+.links a{font-size:13px;font-weight:600;color:var(--text);border:1px solid var(--line);padding:8px 14px;border-radius:10px;transition:.15s;background:var(--bg)}
+.links a:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* Skills */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.skill{transition:.25s}
+.skill:hover{transform:translateY(-4px);border-color:var(--accent)}
+.skill h3{font-size:16px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.skill h3::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--grad)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:13px;font-weight:500;padding:6px 13px;border-radius:999px;background:var(--bg-alt);border:1px solid var(--line);color:var(--text);transition:.15s}
+.chips span:hover{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+
+/* Certs */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.cert{transition:.25s;position:relative}
+.cert:hover{transform:translateY(-4px);border-color:var(--accent)}
+.cert .ic{width:42px;height:42px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:20px;margin-bottom:16px}
+.cert small{color:var(--muted);font-size:12.5px;font-weight:600;letter-spacing:.4px;text-transform:uppercase}
+.cert h3{font-size:16.5px;margin-top:6px;line-height:1.35}
+.lang{margin-top:30px;color:var(--muted);text-align:center}
+.lang strong{color:var(--text)}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:start}
+.contact h3{font-size:30px;letter-spacing:-.8px;line-height:1.2;margin-bottom:16px}
+.contact p{color:var(--muted);font-size:17px;margin-bottom:24px}
+.rows{display:grid;gap:12px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;transition:.2s}
+.row:hover{border-color:var(--accent);transform:translateX(4px)}
+.row small{display:block;color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:1.2px;font-weight:600}
+.row a{font-weight:600;word-break:break-all}
+.row a:hover{color:var(--accent)}
+.copy{border:1px solid var(--line);background:transparent;color:var(--accent);border-radius:9px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer;transition:.15s}
+.copy:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:14px;background:var(--bg-alt)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer a:hover{color:var(--accent)}
+.totop{position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:14px;border:none;background:var(--grad);color:#fff;font-size:18px;cursor:pointer;box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transform:translateY(10px);transition:.25s;z-index:60}
+.totop.show{opacity:1;pointer-events:auto;transform:none}
+
+@media (max-width:960px){
+  .hero-grid,.about,.contact{grid-template-columns:1fr;gap:40px}
+  .grid3{grid-template-columns:1fr 1fr}
+  .grid4{grid-template-columns:1fr 1fr}
+  .tl-item{grid-template-columns:1fr;gap:4px}
+  .stat:nth-child(n){transform:none}
+}
+@media (max-width:760px){
+  .wrap{padding:0 20px}
+  section{padding:68px 0}
+  .hero{padding:64px 0 60px}
+  .menu-btn{display:inline-block}
+  nav ul{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 20px 16px;gap:2px}
+  nav ul.open{display:flex}
+  nav .icon-btn{margin:8px 0 0;width:100%}
+  .grid2,.grid3,.grid4{grid-template-columns:1fr}
+  .card{padding:24px}
+  .tl{padding-left:28px}
+  .tl-item::before{left:-28px}
+  .sec-head::after{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+@media print{header,.totop,.progress,.cta,.social{display:none}.reveal{opacity:1;transform:none}section{padding:28px 0}}
+</style>
 </head>
+<body id="top">
+<div class="progress" id="progress"></div>
+<a class="skip" href="#main">Skip to content</a>
 
-<body>
-
-    <a class="skip-link" href="#main">Skip to content</a>
-
-    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
-    <!-- Navigation -->
-    <nav aria-label="Primary">
-        <a href="#top" class="nav-mark" aria-label="Back to top">SD</a>
-        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">
-            <span></span><span></span><span></span>
-            <span class="sr-only">Menu</span>
-        </button>
-        <div class="nav-links" id="navLinks">
-            <a href="#about" data-nav-link>About</a>
-            <a href="#experience" data-nav-link>Experience</a>
-            <a href="#projects" data-nav-link>Projects</a>
-            <a href="#skills" data-nav-link>Skills</a>
-            <a href="#education" data-nav-link>Education</a>
-            <a href="#achievements" data-nav-link>Certifications</a>
-            <a href="#contact" data-nav-link>Contact</a>
-            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
-                <span class="theme-icon theme-icon-light" aria-hidden="true">☀</span>
-                <span class="theme-icon theme-icon-dark" aria-hidden="true">☾</span>
-            </button>
-        </div>
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo"><b>SD</b><span>Shruthi Durgaa C</span></a>
+    <nav>
+      <ul id="menu">
+        <li><a class="link" href="#about">About</a></li>
+        <li><a class="link" href="#experience">Experience</a></li>
+        <li><a class="link" href="#projects">Projects</a></li>
+        <li><a class="link" href="#skills">Skills</a></li>
+        <li><a class="link" href="#education">Education</a></li>
+        <li><a class="link" href="#achievements">Certifications</a></li>
+        <li><a class="link" href="#contact">Contact</a></li>
+        <li><button class="icon-btn" id="theme" aria-label="Toggle theme">☾</button></li>
+      </ul>
     </nav>
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+  </div>
+</header>
 
-    <!-- Hero -->
-    <header id="top">
-        <p class="status-chip"><span class="status-dot" aria-hidden="true"></span>Open to internships — software development &amp; AI/ML</p>
-        <p class="kicker">B.Sc Artificial Intelligence &amp; Machine Learning</p>
-        <h1>Shruthi Durgaa C</h1>
-        <p class="lede">
-            I build with Python and Java, solve problems with data structures and algorithms,
-            and study neural networks and machine learning — with startup leadership
-            experience behind me.
-        </p>
-        <div class="hero-actions">
-            <a href="#projects" class="button button-primary">View my projects</a>
-            <a href="#contact" class="button button-ghost">Get in touch</a>
+<main id="main">
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="badge"><i></i> Open to internships — software development &amp; AI/ML</span>
+        <p class="eyebrow">&gt; B.Sc Artificial Intelligence &amp; Machine Learning</p>
+        <h1>Shruthi <span>Durgaa C</span></h1>
+        <p class="lead">I build with Python and Java, solve problems with data structures and algorithms, and study neural networks and machine learning — with startup leadership experience behind me.</p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">View my projects →</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
         </div>
+        <div class="social">
+          <a href="https://github.com/shrudurga08-byte" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/shruthi-durgaa-5272ab380" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://leetcode.com/u/shrudurga_158/" target="_blank" rel="noopener">LeetCode</a>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong data-count="75" data-suffix="+">75+</strong><span>LeetCode problems</span></div>
+        <div class="stat"><strong data-count="14" data-suffix="+">14+</strong><span>DP problems</span></div>
+        <div class="stat"><strong>Py · Java · C++</strong><span>Languages</span></div>
+        <div class="stat"><strong>Former COO</strong><span>Startup experience</span></div>
+      </div>
+    </div>
+  </div>
 
-        <dl class="stat-strip">
-            <div>
-                <dt>LeetCode problems</dt>
-                <dd data-count="75" data-suffix="+">75+</dd>
-            </div>
-            <div>
-                <dt>DP problems</dt>
-                <dd data-count="14" data-suffix="+">14+</dd>
-            </div>
-            <div>
-                <dt>Languages</dt>
-                <dd>Py · Java · C++</dd>
-            </div>
-            <div>
-                <dt>Startup experience</dt>
-                <dd>Former COO</dd>
-            </div>
-        </dl>
-    </header>
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="num">01</span><h2>About</h2></div>
+      <div class="about">
+        <div class="reveal">
+          <p class="quote">I want to write code that solves a real problem — and present it so people outside the code understand it too.</p>
+        </div>
+        <div class="reveal d1">
+          <p>I'm a B.Sc Artificial Intelligence &amp; Machine Learning student at KPR College of Arts, Science and Research, with a strong foundation in Python, Java and data structures &amp; algorithms. I'm hands-on with pandas, NumPy and scikit-learn, and my coursework covers neural networks.</p>
+          <p>Previously, I co-founded <strong>Innovate Graphicz</strong>, a student-led digital branding and web studio, where I handled operations, client delivery and team coordination — adding communication and leadership to my technical skill set.</p>
+          <p>I'm looking for internships in software development and AI/ML where I can write code that solves a real problem and present it so people outside the code understand it too.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <main id="main">
+  <section id="experience" class="alt">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="num">02</span><h2>Experience</h2></div>
+      <div class="tl">
+        <div class="card tl-item reveal">
+          <div class="date">Dec 2025 — Mar 2026</div>
+          <div>
+            <h3>Former Co-Founder &amp; Chief Operating Officer</h3>
+            <div class="org">Innovate Graphicz · Coimbatore</div>
+            <ul class="dots">
+              <li>Co-founded a student-led digital branding and web solutions startup, overseeing operations, client delivery and team coordination.</li>
+              <li>Led digital marketing initiatives that strengthened the online presence and brand identity of startup and NGO clients.</li>
+              <li>Coordinated design and marketing team members to deliver client-focused digital solutions on schedule.</li>
+              <li>Presented branding proposals and design concepts to clients and stakeholders, turning requirements into clear creative direction.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- About -->
-        <section id="about" aria-labelledby="about-heading" data-reveal>
-            <div class="section-inner">
-                <h2 id="about-heading">About</h2>
-                <p>
-                    I'm a B.Sc Artificial Intelligence &amp; Machine Learning student at
-                    KPR College of Arts, Science and Research, with a strong foundation in
-                    Python, Java and data structures &amp; algorithms. I'm hands-on with pandas,
-                    NumPy and scikit-learn, and my coursework covers neural networks.
-                </p>
-                <p>
-                    Previously, I co-founded <strong>Innovate Graphicz</strong>, a student-led digital
-                    branding and web studio, where I handled operations, client delivery and
-                    team coordination — adding communication and leadership to my technical
-                    skill set.
-                </p>
-                <p>
-                    I'm looking for internships in software development and AI/ML where I can
-                    write code that solves a real problem and present it so people outside the
-                    code understand it too.
-                </p>
-            </div>
-        </section>
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="num">03</span><h2>Projects</h2></div>
+      <div class="grid2">
+        <article class="card proj reveal">
+          <div class="top"><span class="tag">JAVA · OOP</span><span class="pnum">01</span></div>
+          <h3>Splitwise Expense-Sharing App</h3>
+          <p>A Java application to split and track shared expenses among groups of users.</p>
+          <ul class="dots">
+            <li>Separate <code>User</code>, <code>Group</code>, <code>Expense</code> and <code>Share</code> classes keep the logic modular.</li>
+            <li>Applies inheritance (<code>Share</code> extends <code>Expense</code>).</li>
+          </ul>
+          <div class="links">
+            <a href="https://github.com/shrudurga08-byte/Splitwise" target="_blank" rel="noopener">Splitwise ↗</a>
+            <a href="https://github.com/shrudurga08-byte/SplitwiseApp" target="_blank" rel="noopener">SplitwiseApp ↗</a>
+          </div>
+        </article>
+        <article class="card proj reveal d1">
+          <div class="top"><span class="tag">PYTHON · JAVA · C++</span><span class="pnum">02</span></div>
+          <h3>LeetCode — 75 Days Challenge</h3>
+          <p>75+ problems solved across arrays, strings, two pointers, hash tables, trees, DFS, backtracking and dynamic programming.</p>
+          <ul class="dots">
+            <li>14+ dynamic programming problems.</li>
+            <li>Earned the LeetCode 75 and 50 Days 2026 badges.</li>
+            <li>Daily solutions published to a public repository.</li>
+          </ul>
+          <div class="links"><a href="https://github.com/shrudurga08-byte/75DaysLeetCodeChallenge" target="_blank" rel="noopener">75DaysLeetCodeChallenge ↗</a></div>
+        </article>
+        <article class="card proj reveal">
+          <div class="top"><span class="tag">HTML · CSS · JAVASCRIPT</span><span class="pnum">03</span></div>
+          <h3>Portfolio Website</h3>
+          <p>This site — built from scratch to showcase projects and skills, with a light/dark theme and responsive layout.</p>
+          <div class="links"><a href="https://github.com/shrudurga08-byte/Portfolio" target="_blank" rel="noopener">Portfolio ↗</a></div>
+        </article>
+        <article class="card proj reveal d1">
+          <div class="top"><span class="tag">HTML · CSS · JAVASCRIPT</span><span class="pnum">04</span></div>
+          <h3>Login Page</h3>
+          <p>A front-end login page interface built with clean, responsive markup and styling.</p>
+          <div class="links"><a href="https://github.com/shrudurga08-byte/LoginIn_Page" target="_blank" rel="noopener">LoginIn_Page ↗</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-        <!-- Experience -->
-        <section id="experience" aria-labelledby="experience-heading" data-reveal>
-            <div class="section-inner">
-                <h2 id="experience-heading">Experience</h2>
-                <ol class="timeline">
-                    <li>
-                        <span class="timeline-date">Dec 2025 — Mar 2026</span>
-                        <h3>Former Co-Founder &amp; Chief Operating Officer</h3>
-                        <p class="org">Innovate Graphicz · Coimbatore</p>
-                        <ul class="bullets">
-                            <li>Co-founded a student-led digital branding and web solutions startup, overseeing operations, client delivery and team coordination.</li>
-                            <li>Led digital marketing initiatives that strengthened the online presence and brand identity of startup and NGO clients.</li>
-                            <li>Coordinated design and marketing team members to deliver client-focused digital solutions on schedule.</li>
-                            <li>Presented branding proposals and design concepts to clients and stakeholders, turning requirements into clear creative direction.</li>
-                        </ul>
-                    </li>
-                </ol>
-            </div>
-        </section>
+  <section id="skills" class="alt">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="num">04</span><h2>Skills</h2></div>
+      <div class="grid3">
+        <div class="card skill reveal"><h3>Programming Languages</h3><div class="chips"><span>Python</span><span>Java</span><span>C++</span><span>HTML/CSS</span><span>JavaScript</span></div></div>
+        <div class="card skill reveal d1"><h3>Data Structures &amp; Algorithms</h3><div class="chips"><span>Arrays &amp; Strings</span><span>Hash Tables</span><span>Two Pointers</span><span>Trees</span><span>DFS</span><span>Backtracking</span><span>Dynamic Programming</span></div></div>
+        <div class="card skill reveal d2"><h3>Data Science &amp; Machine Learning</h3><div class="chips"><span>pandas</span><span>NumPy</span><span>Neural Networks</span><span>Backpropagation</span></div></div>
+        <div class="card skill reveal"><h3>Software Engineering</h3><div class="chips"><span>Object-Oriented Programming</span><span>Git &amp; GitHub</span><span>VS Code</span><span>Jupyter</span></div></div>
+        <div class="card skill reveal d1"><h3>Design, Marketing &amp; Soft Skills</h3><div class="chips"><span>Digital Branding</span><span>Presentation Design</span><span>Digital Marketing</span><span>Client Communication</span><span>Leadership</span></div></div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Projects -->
-        <section id="projects" aria-labelledby="projects-heading" data-reveal>
-            <div class="section-inner">
-                <h2 id="projects-heading">Projects</h2>
+  <section id="education">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="num">05</span><h2>Education</h2></div>
+      <div class="tl">
+        <div class="card tl-item reveal">
+          <div class="date">Jul 2025 — May 2028</div>
+          <div>
+            <h3>B.Sc Artificial Intelligence &amp; Machine Learning</h3>
+            <div class="org">KPR College of Arts, Science and Research</div>
+            <ul class="dots">
+              <li>Coursework: machine learning, data science, artificial neural networks; enrolled in NPTEL online certification coursework.</li>
+              <li>Active in KPR Incubation Hub programs, hackathons and startup initiatives.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card tl-item reveal d1">
+          <div class="date">Jun 2023 — 2025</div>
+          <div>
+            <h3>Higher Secondary Education</h3>
+            <div class="org" style="margin-bottom:0">St. Joseph Hr. Sec. School · State Board</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                <div class="project-grid">
-                    <article class="project-card project-featured">
-                        <p class="project-meta">Java · OOP</p>
-                        <h3>Splitwise Expense-Sharing App</h3>
-                        <p>A Java application to split and track shared expenses among groups of users.</p>
-                        <ul class="bullets">
-                            <li>Separate <code>User</code>, <code>Group</code>, <code>Expense</code> and <code>Share</code> classes keep the logic modular.</li>
-                            <li>Applies inheritance (<code>Share</code> extends <code>Expense</code>).</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="https://github.com/shrudurga08-byte/Splitwise" target="_blank" rel="noopener">Splitwise ↗</a>
-                            <a href="https://github.com/shrudurga08-byte/SplitwiseApp" target="_blank" rel="noopener">SplitwiseApp ↗</a>
-                        </div>
-                    </article>
+  <section id="achievements" class="alt">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="num">06</span><h2>Certifications &amp; Achievements</h2></div>
+      <div class="grid4">
+        <div class="card cert reveal"><div class="ic">📣</div><small>HubSpot Academy</small><h3>Fundamentals of Digital Marketing</h3></div>
+        <div class="card cert reveal d1"><div class="ic">🎖</div><small>IBM SkillsBuild</small><h3>4 Digital Badges</h3></div>
+        <div class="card cert reveal d2"><div class="ic">🏆</div><small>LeetCode</small><h3>LeetCode 75 &amp; 50 Days Badge 2026</h3></div>
+        <div class="card cert reveal d3"><div class="ic">🚀</div><small>KPR Incubation Hub</small><h3>Program Participant</h3></div>
+      </div>
+      <p class="lang reveal"><strong>Languages:</strong> Tamil (native) · English (professional working proficiency)</p>
+    </div>
+  </section>
 
-                    <article class="project-card project-featured">
-                        <p class="project-meta">Python · Java · C++</p>
-                        <h3>LeetCode — 75 Days Challenge</h3>
-                        <p>75+ problems solved across arrays, strings, two pointers, hash tables, trees, DFS, backtracking and dynamic programming.</p>
-                        <ul class="bullets">
-                            <li>14+ dynamic programming problems.</li>
-                            <li>Earned the LeetCode 75 and 50 Days 2026 badges.</li>
-                            <li>Daily solutions published to a public repository.</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="https://github.com/shrudurga08-byte/75DaysLeetCodeChallenge" target="_blank" rel="noopener">75DaysLeetCodeChallenge ↗</a>
-                        </div>
-                    </article>
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="num">07</span><h2>Contact</h2></div>
+      <div class="contact">
+        <div class="reveal">
+          <h3>Let's build something together.</h3>
+          <p>Open to software development and AI/ML internships, and happy to talk about projects or branding work. Coimbatore, Tamil Nadu, India.</p>
+          <a class="btn primary" href="mailto:shrudurga08@gmail.com">Send an email →</a>
+        </div>
+        <div class="rows reveal d1">
+          <div class="row"><div><small>Email</small><a href="mailto:shrudurga08@gmail.com">shrudurga08@gmail.com</a></div><button class="copy" data-copy="shrudurga08@gmail.com">Copy</button></div>
+          <div class="row"><div><small>Phone</small><a href="tel:+919843361678">+91 98433 61678</a></div><button class="copy" data-copy="+91 98433 61678">Copy</button></div>
+          <div class="row"><div><small>LinkedIn</small><a href="https://www.linkedin.com/in/shruthi-durgaa-5272ab380" target="_blank" rel="noopener">shruthi-durgaa</a></div></div>
+          <div class="row"><div><small>GitHub</small><a href="https://github.com/shrudurga08-byte" target="_blank" rel="noopener">shrudurga08-byte</a></div></div>
+          <div class="row"><div><small>LeetCode</small><a href="https://leetcode.com/u/shrudurga_158/" target="_blank" rel="noopener">shrudurga_158</a></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-                    <article class="project-card">
-                        <p class="project-meta">HTML · CSS · JavaScript</p>
-                        <h3>Portfolio Website</h3>
-                        <p>This site — built from scratch to showcase projects and skills, with a light/dark theme and responsive layout.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/shrudurga08-byte/Portfolio" target="_blank" rel="noopener">Portfolio ↗</a>
-                        </div>
-                    </article>
+<footer>
+  <div class="wrap">
+    <span>© Shruthi Durgaa C. All rights reserved.</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+<button class="totop" id="totop" aria-label="Back to top">↑</button>
 
-                    <article class="project-card">
-                        <p class="project-meta">HTML · CSS · JavaScript</p>
-                        <h3>Login Page</h3>
-                        <p>A front-end login page interface built with clean, responsive markup and styling.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/shrudurga08-byte/LoginIn_Page" target="_blank" rel="noopener">LoginIn_Page ↗</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  var saved=null; try{saved=localStorage.getItem('theme')}catch(e){}
+  var pref=saved||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+  function apply(t){root.setAttribute('data-theme',t);btn.textContent=t==='dark'?'☀':'☾';
+    var m=document.querySelector('meta[name=theme-color]');if(m)m.content=t==='dark'?'#0b0f17':'#F5F6F8';}
+  apply(pref);
+  btn.addEventListener('click',function(){
+    var t=root.getAttribute('data-theme')==='dark'?'light':'dark';apply(t);
+    try{localStorage.setItem('theme',t)}catch(e){}
+  });
 
-        <!-- Skills -->
-        <section id="skills" aria-labelledby="skills-heading" data-reveal>
-            <div class="section-inner">
-                <h2 id="skills-heading">Skills</h2>
+  var menu=document.getElementById('menu');
+  document.getElementById('menuBtn').addEventListener('click',function(){menu.classList.toggle('open')});
+  menu.addEventListener('click',function(e){if(e.target.tagName==='A')menu.classList.remove('open')});
 
-                <div class="skill-group">
-                    <h3>Programming Languages</h3>
-                    <ul class="skill-list">
-                        <li>Python</li>
-                        <li>Java</li>
-                        <li>C++</li>
-                        <li>HTML/CSS</li>
-                        <li>JavaScript</li>
-                    </ul>
-                </div>
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var v=b.getAttribute('data-copy');
+      (navigator.clipboard?navigator.clipboard.writeText(v):Promise.reject()).then(function(){
+        b.textContent='Copied ✓';setTimeout(function(){b.textContent='Copy'},1500);
+      }).catch(function(){});
+    });
+  });
 
-                <div class="skill-group">
-                    <h3>Data Structures &amp; Algorithms</h3>
-                    <ul class="skill-list">
-                        <li>Arrays &amp; Strings</li>
-                        <li>Hash Tables</li>
-                        <li>Two Pointers</li>
-                        <li>Trees</li>
-                        <li>DFS</li>
-                        <li>Backtracking</li>
-                        <li>Dynamic Programming</li>
-                    </ul>
-                </div>
+  // Active nav link
+  var links=document.querySelectorAll('nav a.link');
+  var navIO=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)})}
+  })},{rootMargin:'-45% 0px -50% 0px'});
+  document.querySelectorAll('main section').forEach(function(s){navIO.observe(s)});
 
-                <div class="skill-group">
-                    <h3>Data Science &amp; Machine Learning</h3>
-                    <ul class="skill-list">
-                        <li>pandas</li>
-                        <li>NumPy</li>
-                        <li>Neural Networks</li>
-                        <li>Backpropagation</li>
-                    </ul>
-                </div>
+  // Scroll reveal
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var rIO=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');rIO.unobserve(e.target)}
+    })},{threshold:.12});
+    els.forEach(function(el){rIO.observe(el)});
+  } else { els.forEach(function(el){el.classList.add('in')}); }
 
-                <div class="skill-group">
-                    <h3>Software Engineering</h3>
-                    <ul class="skill-list">
-                        <li>Object-Oriented Programming</li>
-                        <li>Git &amp; GitHub</li>
-                        <li>VS Code</li>
-                        <li>Jupyter</li>
-                    </ul>
-                </div>
+  // Count-up
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    if(reduce)return;
+    var target=+el.dataset.count, suf=el.dataset.suffix||'', start=null;
+    function step(ts){
+      if(!start)start=ts;
+      var p=Math.min((ts-start)/1200,1);
+      el.textContent=Math.round(target*(1-Math.pow(1-p,3)))+suf;
+      if(p<1)requestAnimationFrame(step);
+    }
+    el.textContent='0'+suf;requestAnimationFrame(step);
+  });
 
-                <div class="skill-group">
-                    <h3>Design, Marketing &amp; Soft Skills</h3>
-                    <ul class="skill-list">
-                        <li>Digital Branding</li>
-                        <li>Presentation Design</li>
-                        <li>Digital Marketing</li>
-                        <li>Client Communication</li>
-                        <li>Leadership</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section id="education" aria-labelledby="education-heading" data-reveal>
-            <div class="section-inner">
-                <h2 id="education-heading">Education</h2>
-                <ol class="timeline">
-                    <li>
-                        <span class="timeline-date">Jul 2025 — May 2028</span>
-                        <h3>B.Sc Artificial Intelligence &amp; Machine Learning</h3>
-                        <p class="org">KPR College of Arts, Science and Research</p>
-                        <ul class="bullets">
-                            <li>Coursework: machine learning, data science, artificial neural networks; enrolled in NPTEL online certification coursework.</li>
-                            <li>Active in KPR Incubation Hub programs, hackathons and startup initiatives.</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span class="timeline-date">Jun 2023 — 2025</span>
-                        <h3>Higher Secondary Education</h3>
-                        <p class="org">St. Joseph Hr. Sec. School · State Board</p>
-                    </li>
-                </ol>
-            </div>
-        </section>
-
-        <!-- Certifications & Achievements -->
-        <section id="achievements" aria-labelledby="achievements-heading" data-reveal>
-            <div class="section-inner">
-                <h2 id="achievements-heading">Certifications &amp; Achievements</h2>
-
-                <div class="badge-grid">
-                    <article class="badge-card">
-                        <span class="badge-issuer">HubSpot Academy</span>
-                        <h3>Fundamentals of Digital Marketing</h3>
-                    </article>
-                    <article class="badge-card">
-                        <span class="badge-issuer">IBM SkillsBuild</span>
-                        <h3>4 Digital Badges</h3>
-                    </article>
-                    <article class="badge-card">
-                        <span class="badge-issuer">LeetCode</span>
-                        <h3>LeetCode 75 &amp; 50 Days Badge 2026</h3>
-                    </article>
-                    <article class="badge-card">
-                        <span class="badge-issuer">KPR Incubation Hub</span>
-                        <h3>Program Participant</h3>
-                    </article>
-                </div>
-
-                <p class="muted languages-line"><strong>Languages:</strong> Tamil (native) · English (professional working proficiency)</p>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" aria-labelledby="contact-heading" data-reveal>
-            <div class="section-inner">
-                <h2 id="contact-heading">Contact</h2>
-                <p class="muted">Open to software development and AI/ML internships, and happy to talk about projects or branding work. Coimbatore, Tamil Nadu, India.</p>
-
-                <ul class="contact-list">
-                    <li>
-                        <span>Email</span>
-                        <div class="contact-value">
-                            <a href="mailto:shrudurga08@gmail.com">shrudurga08@gmail.com</a>
-                            <button type="button" class="copy-btn" data-copy="shrudurga08@gmail.com" data-label="Email" aria-label="Copy email address">Copy</button>
-                        </div>
-                    </li>
-                    <li>
-                        <span>Phone</span>
-                        <div class="contact-value">
-                            <a href="tel:+919843361678">+91 98433 61678</a>
-                            <button type="button" class="copy-btn" data-copy="+91 98433 61678" data-label="Phone number" aria-label="Copy phone number">Copy</button>
-                        </div>
-                    </li>
-                    <li>
-                        <span>LinkedIn</span>
-                        <div class="contact-value">
-                            <a href="https://www.linkedin.com/in/shruthi-durgaa-5272ab380" target="_blank" rel="noopener">shruthi-durgaa</a>
-                        </div>
-                    </li>
-                    <li>
-                        <span>GitHub</span>
-                        <div class="contact-value">
-                            <a href="https://github.com/shrudurga08-byte" target="_blank" rel="noopener">shrudurga08-byte</a>
-                        </div>
-                    </li>
-                    <li>
-                        <span>LeetCode</span>
-                        <div class="contact-value">
-                            <a href="https://leetcode.com/u/shrudurga_158/" target="_blank" rel="noopener">shrudurga_158</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>&copy; <span id="year"></span> Shruthi Durgaa C. All rights reserved.</p>
-        <p><a href="#top">Back to top ↑</a></p>
-    </footer>
-
-    <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
-    <script src="script.js"></script>
+  // Progress bar + back-to-top
+  var bar=document.getElementById('progress'), top=document.getElementById('totop');
+  function onScroll(){
+    var h=document.documentElement.scrollHeight-innerHeight;
+    bar.style.width=(h>0?scrollY/h*100:0)+'%';
+    top.classList.toggle('show',scrollY>600);
+  }
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+  top.addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
 </body>
-
 </html>
